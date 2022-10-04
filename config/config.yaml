@@ -1,0 +1,49 @@
+global:
+  dependencies:
+    python:
+      - forge-sdk==4.0.0a12
+      - forge-cli==4.0.0a27
+      - cecs==4.0.0a3
+      - services/*.py
+  env:
+    PROJECT_SLUG: "nola"
+
+    LOG_LEVEL: INFO
+
+  repository: "nexus.vingd.net"
+
+  cecs:
+    params: "-e venv"
+
+services:
+  rule-engine:
+    type: java
+    resources:
+      cpu: 500m
+      memory: 650Mi
+
+  heartbeat-scheduler:
+    package: heartbeat
+    type: python
+    version: 4.0.0a4
+    env:
+      HEARTBEAT_CYCLE: 5
+    db:
+      mongo: true
+    dependencies:
+      - rule-engine-api==4.0.0a21
+    resources:
+      cpu: 69m
+      memory: 65Mi
+
+  heartbeat-sender:
+    package: heartbeat
+    type: python
+    version: 4.0.0a4
+    db:
+      mongo: true
+    dependencies:
+      - rule-engine-api==4.0.0a21
+    resources:
+      cpu: 84m
+      memory: 94Mi
