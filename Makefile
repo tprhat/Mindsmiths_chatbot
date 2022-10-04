@@ -15,4 +15,4 @@ format:
 	yapf --style setup.cfg -r -i .
 
 type-check:
-	cd .. && mypy --config-file=kaliopa/setup.cfg -p kaliopa
+	cd .. && mypy --config-file=nola/setup.cfg -p nola

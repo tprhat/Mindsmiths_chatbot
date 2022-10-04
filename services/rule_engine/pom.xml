@@ -4,7 +4,7 @@
 	<artifactId>RuleEngine</artifactId>
 
 	<name>Rule Engine</name>
-	<description>Rule engine for Kaliopa - a Mindsmiths AI assistant</description>
+	<description>Rule engine for Nola - a Mindsmiths AI assistant</description>
 	<version>4.0.0</version>
 	<packaging>kjar</packaging>
 
