@@ -2,17 +2,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>main</groupId>
 	<artifactId>RuleEngine</artifactId>
-
 	<name>Rule Engine</name>
-	<description>Rule engine for Nola - a Mindsmiths AI assistant</description>
-	<version>4.0.0</version>
+	<description>Rule engine</description>
+	<version>5.0.0</version>
 	<packaging>kjar</packaging>
-
 	<properties>
-		<drools.version>7.68.0.Final</drools.version>
+		<drools.version>7.73.0.Final</drools.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<repositories>
 		<repository>
 			<id>jboss-public-repository-group</id>
@@ -33,26 +30,23 @@
 			<url>https://nexus.vingd.net/repository/maven-releases/</url>
 		</repository>
 	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.mindsmiths</groupId>
 			<artifactId>rule-engine</artifactId>
-			<version>4.0.0a21</version>
+			<version>5.0.0b3</version>
 		</dependency>
-
 	</dependencies>
-
 	<build>
 		<finalName>app</finalName>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
 		<plugins>
-            <plugin>
-                <groupId>org.kie</groupId>
-                <artifactId>kie-maven-plugin</artifactId>
-                <version>${drools.version}</version>
-                <extensions>true</extensions>
-            </plugin>
+			<plugin>
+				<groupId>org.kie</groupId>
+				<artifactId>kie-maven-plugin</artifactId>
+				<version>${drools.version}</version>
+				<extensions>true</extensions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

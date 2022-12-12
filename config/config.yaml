@@ -1,9 +1,9 @@
 global:
   dependencies:
     python:
-      - forge-sdk==4.0.0a12
-      - forge-cli==4.0.0a27
-      - cecs==4.0.0a3
+      - forge-sdk==5.0.0b0
+      - forge-cli==5.0.0b4
+      # - cecs==4.0.0a3
       - services/*.py
   env:
     PROJECT_SLUG: "nola"
@@ -13,6 +13,7 @@ global:
   repository: "nexus.vingd.net"
 
   cecs:
+    enabled: false
     params: "-e venv"
 
 services:
@@ -22,28 +23,15 @@ services:
       cpu: 500m
       memory: 650Mi
 
-  heartbeat-scheduler:
-    package: heartbeat
+  heartbeat:
     type: python
-    version: 4.0.0a4
+    version: 5.0.0b0
     env:
       HEARTBEAT_CYCLE: 5
     db:
       mongo: true
     dependencies:
-      - rule-engine-api==4.0.0a21
+      - rule-engine-api==5.0.0b3
     resources:
       cpu: 69m
       memory: 65Mi
-
-  heartbeat-sender:
-    package: heartbeat
-    type: python
-    version: 4.0.0a4
-    db:
-      mongo: true
-    dependencies:
-      - rule-engine-api==4.0.0a21
-    resources:
-      cpu: 84m
-      memory: 94Mi
