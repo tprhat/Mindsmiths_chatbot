@@ -36,6 +36,16 @@
 			<artifactId>rule-engine</artifactId>
 			<version>5.0.0b3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.mindsmiths</groupId>
+			<artifactId>telegram-adapter-client</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mindsmiths</groupId>
+			<artifactId>gpt3-adapter-client</artifactId>
+			<version>5.0.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>app</finalName>
